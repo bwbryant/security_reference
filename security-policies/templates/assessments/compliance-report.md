@@ -7,7 +7,7 @@
 ## Executive Statement and Attestation
 
 {{companyShortName}} has implemented an information security and risk management
-program to protect our customers and information. We leverage JupiterOne to
+program to protect our customers and information. We leverage {{complianceTool}} to
 manage our compliance program according to the controls and requirements
 specified in {{complianceStandard}}.
 
