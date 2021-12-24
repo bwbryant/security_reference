@@ -1,0 +1,13 @@
+#! /bin/sh
+midmin () {
+	H=`echo $1 | sed 's/\([0-9]*\):.*/\1/'`
+	M=`echo $1 | sed 's/[0-9]*:\([0-9]*\).*/\1/'`
+	APM=`echo $1 | sed 's/[0-9]*:[0-9]* *\([AP]M\)*.*/\1/'`
+	if [ -n "$APM" -a $APM = "PM" ]
+	then
+		H=`expr $H + 12`
+	fi
+	NUMMIN=`expr $H \* 60 + $M`
+}
+midmin 3:15PM
+echo $NUMMIN

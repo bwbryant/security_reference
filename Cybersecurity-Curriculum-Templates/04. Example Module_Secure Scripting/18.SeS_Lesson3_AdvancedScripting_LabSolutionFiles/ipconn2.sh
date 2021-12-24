@@ -1,0 +1,15 @@
+#! /bin/sh
+IFS=,
+COUNT=0
+while read CONN DATE TIME DURATION PROTO SRCPORT DESTPORT SRCIP DESTIP ATTACK TYPE
+do
+	if [ $COUNT -ne 0 ]
+	then
+		TIMESTAMP=`date "-d$DATE $TIME" +%s`
+	else
+		TIMESTAMP="TIMESTAMP"
+	fi
+	echo "$CONN,$DATE,$TIME,$TIMESTAMP,$DURATION,$PROTO,$SRCPORT,$DESTPORT,$SRCIP,$DESTIP,$ATTACK,$TYPE"
+	COUNT=`expr $COUNT + 1`
+done < connect.csv
+exit 0
