@@ -1,0 +1,8 @@
+#! /bin/sh
+RESULT=0
+incrementby1() {
+	RESULT=`expr $1 + 1`
+}
+
+incrementby1 100
+echo $RESULT
