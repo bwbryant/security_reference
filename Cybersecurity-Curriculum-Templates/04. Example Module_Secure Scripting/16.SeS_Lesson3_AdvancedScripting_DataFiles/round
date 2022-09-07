@@ -1,0 +1,13 @@
+#! /bin/sh
+roundto10() {
+	UNITS=`expr $1 % 10`
+	TENS=`expr $1 / 10`
+	if [ $UNITS -ge 5 ]
+	then
+		TENS=`expr $TENS + 1`
+	fi
+	expr $TENS \* 10
+}
+echo `roundto10 13`
+echo `roundto10 50`
+echo `roundto10 97`

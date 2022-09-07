@@ -1,0 +1,6 @@
+#! /bin/sh
+incrementby1() {
+	expr $1 + 1
+}
+
+echo `incrementby1 100`
